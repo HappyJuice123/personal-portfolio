@@ -1,0 +1,19 @@
+{
+  "about": {
+    "name": "Jason Chan",
+    "description": "I am a good boy",
+    "linkedin": "https://www.linkedin.com/in/jason-chan-a35255159/",
+    "github": "https://github.com/HappyJuice123"
+  },
+  "projects": [
+    [
+      "https://github.com/HappyJuice123/fe-nc-games-project",
+      "Description of board game review front end"
+    ],
+    [
+      "https://github.com/HappyJuice123/backend-portfolio-project-NC",
+      "Description of board game review back end"
+    ],
+    ["https://github.com/HappyJuice123/capsalert", "Description of Capsalert "]
+  ]
+}
