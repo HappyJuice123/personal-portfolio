@@ -6,14 +6,22 @@
     "github": "https://github.com/HappyJuice123"
   },
   "projects": [
-    [
-      "https://github.com/HappyJuice123/fe-nc-games-project",
-      "Description of board game review front end"
-    ],
-    [
-      "https://github.com/HappyJuice123/backend-portfolio-project-NC",
-      "Description of board game review back end"
-    ],
-    ["https://github.com/HappyJuice123/capsalert", "Description of Capsalert "]
+    {
+      "name": "Board Game Review Front End",
+      "github": "https://github.com/HappyJuice123/fe-nc-games-project",
+      "host": "https://jasons-board-game-reviews.netlify.app/",
+      "description": "Description of board game review front end"
+    },
+    {
+      "name": "Board Game Review Back End",
+      "github": "https://github.com/HappyJuice123/backend-portfolio-project-NC",
+      "host": "https://jasons-backend-games-project.onrender.com",
+      "description": "Description of board game review back end"
+    },
+    {
+      "name": "Capsalert - Medication Alert App",
+      "github": "https://github.com/HappyJuice123/capsalert",
+      "description": "Description of Capsalert"
+    }
   ]
 }
