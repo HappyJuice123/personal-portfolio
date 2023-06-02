@@ -2,8 +2,8 @@ import data from "../data/data.json";
 
 const Navbar = () => {
   return (
-    <div>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary">
+    <div className="navbar-bg">
+      <nav className="navbar navbar-expand-lg">
         <div className="container-fluid ms-5">
           <a className="navbar-brand fs-1" href="/">
             {data.about.name}
@@ -24,28 +24,28 @@ const Navbar = () => {
             id="navbarSupportedContent"
           >
             <ul className="navbar-nav mb-2 mb-lg-0 d-flex flex-row justify-content-end">
-              <li className="nav-item p-2">
+              <li className="nav-item p-2" key="navbar-home">
                 <a className="nav-link fs-5" href="/">
                   Home
                 </a>
               </li>
-              <li className="nav-item p-2">
+              <li className="nav-item p-2" key="navbar-about">
                 <a className="nav-link fs-5" aria-current="page" href="/">
                   About
                 </a>
               </li>
-              <li className="nav-item p-2">
+              <li className="nav-item p-2" key="navbar-projects">
                 <a className="nav-link fs-5" href="/">
                   Projects
                 </a>
               </li>
-              <li className="nav-item p-2">
+              <li className="nav-item p-2" key="navbar-contact">
                 <a className="nav-link fs-5" href="/">
                   Contact
                 </a>
               </li>
 
-              <li className="nav-item p-2">
+              <li className="nav-item p-2" key="navbar-linkedin">
                 <a href={data.about.linkedin} target="_blank" rel="noreferrer">
                   <img
                     src={require("../icons/linkedin.png")}
@@ -55,7 +55,7 @@ const Navbar = () => {
                   />
                 </a>
               </li>
-              <li className="nav-item p-2">
+              <li className="nav-item p-2" key="navbar-github">
                 <a href={data.about.github} target="_blank" rel="noreferrer">
                   <img
                     src={require("../icons/github.png")}
