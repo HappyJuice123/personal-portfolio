@@ -8,8 +8,10 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <About />
-      <Projects />
+      <div className="overflow-auto" style={{ height: "85vh" }}>
+        <About />
+        <Projects />
+      </div>
       <Footer />
     </div>
   );

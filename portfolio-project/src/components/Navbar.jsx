@@ -3,9 +3,9 @@ import data from "../data/data.json";
 const Navbar = () => {
   return (
     <div className="navbar-bg">
-      <nav className="navbar navbar-expand-lg">
+      <nav className="navbar navbar-expand-lg ">
         <div className="container-fluid ms-5">
-          <a className="navbar-brand fs-1" href="/">
+          <a className="navbar-brand fs-1 text-white" href="/">
             {data.about.name}
           </a>
           <button
@@ -25,22 +25,26 @@ const Navbar = () => {
           >
             <ul className="navbar-nav mb-2 mb-lg-0 d-flex flex-row justify-content-end">
               <li className="nav-item p-2" key="navbar-home">
-                <a className="nav-link fs-5" href="/">
+                <a className="nav-link fs-5 text-white" href="/">
                   Home
                 </a>
               </li>
               <li className="nav-item p-2" key="navbar-about">
-                <a className="nav-link fs-5" aria-current="page" href="/">
+                <a
+                  className="nav-link fs-5 text-white"
+                  aria-current="page"
+                  href="/"
+                >
                   About
                 </a>
               </li>
               <li className="nav-item p-2" key="navbar-projects">
-                <a className="nav-link fs-5" href="/">
+                <a className="nav-link fs-5 text-white" href="/">
                   Projects
                 </a>
               </li>
               <li className="nav-item p-2" key="navbar-contact">
-                <a className="nav-link fs-5" href="/">
+                <a className="nav-link fs-5 text-white" href="/">
                   Contact
                 </a>
               </li>

@@ -38,5 +38,10 @@
 }
 
 .navbar-bg {
-  background-color: rgb(98, 97, 97);
+  background-image: linear-gradient(to top left, #2b3d60, #1b273e);
+  color: white;
+}
+
+.project-card {
+  background-image: linear-gradient(to top right, #2b3d60, #1b273e);
 }
