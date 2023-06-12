@@ -44,4 +44,18 @@
 
 .project-card {
   background-image: linear-gradient(to top right, #2b3d60, #1b273e);
+  cursor: pointer;
+}
+
+.project-card:hover {
+  background-image: linear-gradient(to bottom left, #2b3d60, #1b273e);
+  box-shadow: 0 0 4px;
+}
+
+.footer {
+  background-image: linear-gradient(to top left, #2b3d60, #1b273e);
+}
+
+.project-description {
+  text-align: justify;
 }

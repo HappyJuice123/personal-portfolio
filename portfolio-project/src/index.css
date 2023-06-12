@@ -1,11 +1,12 @@
 @font-face {
-  font-family: "gothamMedium";
-  src: local("./fonts/GothamLight.ttf") format("truetype");
+  font-family: "spotify";
+  src: local(spotify),
+    url("./fonts/Spotify-Font/GothamLight.ttf") format("truetype");
 }
 
 body {
   margin: 0;
-  font-family: "gothamMedium";
+  font-family: "spotify";
   font-weight: 100;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -13,7 +14,7 @@ body {
   color: white;
 }
 
-code {
+/* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-}
+} */
