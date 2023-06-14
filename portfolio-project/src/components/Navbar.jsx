@@ -6,8 +6,8 @@ const Navbar = () => {
     <div className="navbar-bg">
       <nav className="navbar navbar-expand-lg ">
         <div className="container-fluid ms-5 m-0 d-flex flex-row">
-          <Link to="">
-            <p className="navbar-brand fs-1 text-white  p-0 m-0 pt-4">
+          <Link to="/" className="text-decoration-none">
+            <p className="navbar-brand fs-1 text-white  p-0 m-0 pt-4 ">
               {data.about.name}
             </p>
           </Link>
@@ -17,22 +17,22 @@ const Navbar = () => {
           >
             <ul className="navbar-nav mb-2 mb-lg-0 d-flex flex-row justify-content-end">
               <li className="nav-item pt-3" key="navbar-home">
-                <Link>
+                <Link to="/" className="text-decoration-none">
                   <p className="nav-link fs-5 text-white">Home</p>
                 </Link>
               </li>
               <li className="nav-item pt-3" key="navbar-about">
-                <Link to="/about">
+                <Link to="/about" className="text-decoration-none">
                   <p className="nav-link fs-5 text-white">About</p>
                 </Link>
               </li>
               <li className="nav-item pt-3" key="navbar-projects">
-                <Link to="/projects">
+                <Link to="/projects" className="text-decoration-none">
                   <p className="nav-link fs-5 text-white">Projects</p>
                 </Link>
               </li>
               <li className="nav-item pt-3" key="navbar-contact">
-                <Link to="/contact">
+                <Link to="/contact" className="text-decoration-none">
                   <p className="nav-link fs-5 text-white">Contact</p>
                 </Link>
               </li>
