@@ -59,3 +59,13 @@
 .project-description {
   text-align: justify;
 }
+
+.message-input {
+  min-height: 150px;
+  max-height: 300px;
+}
+
+#email {
+  height: 30px;
+  width: 300px;
+}
