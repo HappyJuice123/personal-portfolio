@@ -61,11 +61,27 @@
 }
 
 .message-input {
+  width: 100%;
   min-height: 150px;
   max-height: 300px;
+  max-width: 500px;
 }
 
 #email {
-  height: 30px;
-  width: 300px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.form {
+  min-width: 500px;
+  width: 25%;
+}
+
+button {
+  width: 200px;
+}
+
+.contact {
+  min-width: 500px;
+  width: 25%;
 }
