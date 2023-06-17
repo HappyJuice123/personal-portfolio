@@ -1,16 +1,35 @@
-import React, { useRef, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 export const Contact = () => {
+  const [cursorPosition, setCursorPosition] = useState(0);
   const textareaRef = useRef(null);
+  const [messageSubmitted, setMessageSubmitted] = useState(false);
+  const [message, setMessage] = useState("");
+  const [email, setEmail] = useState("");
+
+  const handleTextAreaChange = (event) => {
+    const { selectionStart } = event.target;
+    setCursorPosition(selectionStart);
+
+    setMessage(event.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    setMessageSubmitted(true);
+    event.preventDefault();
+    setMessage("");
+    setEmail("");
+  };
 
   useEffect(() => {
-    if (textareaRef.current) {
-      textareaRef.current.selectionStart = 0; // Set the cursor position at index 5
-      textareaRef.current.selectionEnd = 5; // Set the selection end at index 5
-      textareaRef.current.focus(); // Set focus on the textarea
-      textareaRef.current.setSelectionRange(5, 5);
-    }
-  }, []);
+    const timer = setTimeout(() => {
+      textareaRef.current.focus();
+    }, 10);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [cursorPosition]);
 
   return (
     <section className="pt-5 pb-5">
@@ -28,7 +47,10 @@ export const Contact = () => {
       </section>
       <h2 className="pt-5">Send a Message</h2>
       <section className="d-flex flex-column align-items-center">
-        <form className="form p-2 d-flex flex-column justify-content-center align-items-center">
+        <form
+          className="form p-2 d-flex flex-column justify-content-center align-items-center"
+          onSubmit={handleSubmit}
+        >
           <section className=" w-100">
             <label
               htmlFor="message"
@@ -41,7 +63,13 @@ export const Contact = () => {
               placeholder="Enter Message..."
               className="p-3 message-input mt-0"
               id="message"
+              onChange={handleTextAreaChange}
               ref={textareaRef}
+              style={{
+                resize: "vertical",
+              }}
+              required
+              value={message}
             />
             <br></br>
             <label
@@ -51,7 +79,16 @@ export const Contact = () => {
               Email Address:
             </label>
 
-            <input type="email" id="email" className="p-2 pb-0" />
+            <input
+              type="email"
+              id="email"
+              className="p-2 pb-0"
+              required
+              onChange={(event) => {
+                setEmail(event.target.value);
+              }}
+              value={email}
+            />
             <section className="d-flex justify-content-center">
               <button type="submit" className="mt-4 pt-2 pb-0 fs-5 rounded-4 ">
                 Send
@@ -59,6 +96,15 @@ export const Contact = () => {
             </section>
           </section>
         </form>
+        <section className="pt-5 w-50">
+          {messageSubmitted ? (
+            <p>
+              Thank you for submitting your message, you will receive a
+              confirmation email shortly. I will aim to get back to you within
+              two working days.
+            </p>
+          ) : null}
+        </section>
       </section>
     </section>
   );
