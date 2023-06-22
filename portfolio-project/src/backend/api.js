@@ -1,27 +1,25 @@
-const axios = require("axios");
+import axios from "axios";
 
 const api = axios.create({
   baseURL: "https://jasons-backend-api.onrender.com",
 });
 
-function getAbout() {
+export const getAbout = () => {
   return api.get("/about").then((result) => {
-    return result.data;
+    return result.data.about;
   });
-}
+};
 
-function getProjects() {
+export const getProjects = () => {
   return api.get("/projects").then((result) => {
     console.log(result.data.projects.projects);
     return result.data.projects.projects;
   });
-}
+};
 
-function postMessage(contactInfo) {
+export const postMessage = (contactInfo) => {
   return api.post("/contact", contactInfo).then((result) => {
     console.log(result.data);
     return result.data;
   });
-}
-
-module.exports = { getAbout, getProjects, postMessage };
+};

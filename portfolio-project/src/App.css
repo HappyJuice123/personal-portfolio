@@ -85,3 +85,17 @@ button {
   min-width: 500px;
   width: 25%;
 }
+
+.icon {
+  fill: white;
+}
+
+@media only screen and (max-width: 768px) {
+  .navbar-dropdown {
+    /* border: 1px black solid; */
+    overflow: hidden;
+  }
+
+  .nav-item {
+  }
+}

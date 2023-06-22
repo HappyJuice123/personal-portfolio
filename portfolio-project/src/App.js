@@ -7,16 +7,27 @@ import { Routes, Route } from "react-router-dom";
 import { Home } from "./components/Home";
 import { Contact } from "./components/Contact";
 
+import { useState, useEffect } from "react";
+import { getAbout } from "./backend/api";
+
 function App() {
+  const [about, setAbout] = useState({});
+
+  useEffect(() => {
+    getAbout().then((data) => {
+      setAbout(data);
+    });
+  }, []);
+
   return (
     <div className="App">
-      <Navbar />
+      <Navbar about={about} />
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/about" element={<About about={about} />} />
         <Route path="/projects" element={<Projects />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/contact" element={<Contact about={about} />} />
       </Routes>
 
       <Footer />
