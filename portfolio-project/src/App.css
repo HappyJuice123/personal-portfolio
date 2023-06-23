@@ -90,12 +90,17 @@ button {
   fill: white;
 }
 
-@media only screen and (max-width: 768px) {
-  .navbar-dropdown {
-    /* border: 1px black solid; */
-    overflow: hidden;
-  }
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+  outline: none;
+  box-shadow: none;
+}
 
-  .nav-item {
-  }
+.navbar-text:hover {
+  color: rgb(204, 185, 185) !important;
+}
+
+.navbar-active {
+  color: black !important;
 }
