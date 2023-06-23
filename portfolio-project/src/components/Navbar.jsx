@@ -1,18 +1,63 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const Navbar = ({ about }) => {
-  const [navbarActive, setNavbarActive] = useState("");
+  const [homeActive, setHomeActive] = useState(false);
+  const [aboutActive, setAboutActive] = useState(false);
+  const [projectsActive, setProjectsActive] = useState(false);
+  const [contactActive, setContactActive] = useState(false);
 
-  const handleActiveNavbar = () => {
-    setNavbarActive("navbar-active");
+  useEffect(() => {
+    setHomeActive(false);
+    setAboutActive(false);
+    setProjectsActive(false);
+    setContactActive(false);
+  }, []);
+
+  const handleHomeNavbar = () => {
+    setProjectsActive(false);
+    setAboutActive(false);
+    setContactActive(false);
+    setHomeActive(true);
+  };
+
+  const handleAboutNavbar = () => {
+    setProjectsActive(false);
+    setHomeActive(false);
+    setContactActive(false);
+    setAboutActive(true);
+  };
+
+  const handleProjectsNavbar = () => {
+    setHomeActive(false);
+    setAboutActive(false);
+    setContactActive(false);
+    setProjectsActive(true);
+  };
+
+  const handleContactNavbar = () => {
+    setHomeActive(false);
+    setAboutActive(false);
+    setProjectsActive(false);
+    setContactActive(true);
+  };
+
+  const handleBrandClick = () => {
+    setHomeActive(false);
+    setAboutActive(false);
+    setProjectsActive(false);
+    setContactActive(false);
   };
 
   return (
     <div className="navbar-bg">
       <nav className="navbar navbar-expand-md">
         <div className="container-fluid ps-5 m-0 d-flex flex-row">
-          <Link to="/" className="text-decoration-none">
+          <Link
+            to="/"
+            className="text-decoration-none"
+            onClick={handleBrandClick}
+          >
             <div className="pt-3 align-items-center">
               <p className="navbar-brand fs-1 text-white p-0 m-0">Jason Chan</p>
             </div>
@@ -42,32 +87,58 @@ const Navbar = ({ about }) => {
                 <Link
                   to="/"
                   className="nav-link fs-5 text-white"
-                  onClick={handleActiveNavbar}
+                  onClick={handleHomeNavbar}
                 >
                   <p
-                    className={`fs-5 text-white d-flex flex-column justify-content-center align-items-center m-0 p-0 pt-2 px-1 mt-1 navbar-text ${navbarActive}`}
+                    className={`fs-5 text-white d-flex flex-column justify-content-center align-items-center m-0 p-0 pt-2 px-1 mt-1 navbar-text ${
+                      homeActive ? "navbar-active" : null
+                    }`}
                   >
                     Home
                   </p>
                 </Link>
               </li>
               <li className="nav-item" key="navbar-about">
-                <Link to="/about" className="nav-link fs-5 text-white">
-                  <p className="fs-5 text-white d-flex flex-column justify content-center align-items-center m-0 p-0 pt-2 px-1 mt-1 navbar-text">
+                <Link
+                  to="/about"
+                  className="nav-link fs-5 text-white"
+                  onClick={handleAboutNavbar}
+                >
+                  <p
+                    className={`fs-5 text-white d-flex flex-column justify content-center align-items-center m-0 p-0 pt-2 px-1 mt-1 navbar-text ${
+                      aboutActive ? "navbar-active" : null
+                    }`}
+                  >
                     About
                   </p>
                 </Link>
               </li>
               <li className="nav-item" key="navbar-projects">
-                <Link to="/projects" className="nav-link fs-5 text-white">
-                  <p className="fs-5 text-white d-flex flex-column justify content-center align-items-center m-0 p-0 pt-2 px-1 mt-1 navbar-text">
+                <Link
+                  to="/projects"
+                  className="nav-link fs-5 text-white"
+                  onClick={handleProjectsNavbar}
+                >
+                  <p
+                    className={`fs-5 text-white d-flex flex-column justify content-center align-items-center m-0 p-0 pt-2 px-1 mt-1 navbar-text ${
+                      projectsActive ? "navbar-active" : null
+                    }`}
+                  >
                     Projects
                   </p>
                 </Link>
               </li>
               <li className="nav-item" key="navbar-contact">
-                <Link to="/contact" className="nav-link fs-5 text-white">
-                  <p className="fs-5 text-white d-flex flex-column justify content-center align-items-center m-0 p-0 pt-2 px-1 mt-1 navbar-text">
+                <Link
+                  to="/contact"
+                  className="nav-link fs-5 text-white"
+                  onClick={handleContactNavbar}
+                >
+                  <p
+                    className={`fs-5 text-white d-flex flex-column justify content-center align-items-center m-0 p-0 pt-2 px-1 mt-1 navbar-text ${
+                      contactActive ? "navbar-active" : null
+                    }`}
+                  >
                     Contact
                   </p>
                 </Link>

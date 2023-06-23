@@ -98,9 +98,9 @@ button {
 }
 
 .navbar-text:hover {
-  color: rgb(204, 185, 185) !important;
+  font-weight: 900 !important;
 }
 
 .navbar-active {
-  color: black !important;
+  font-weight: 900 !important;
 }
