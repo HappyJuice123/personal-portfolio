@@ -1,6 +1,4 @@
 export const Home = ({ about }) => {
-  console.log(about.home);
-
   return (
     <section className="pt-5">
       <img
