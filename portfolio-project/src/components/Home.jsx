@@ -1,4 +1,6 @@
-export const Home = () => {
+export const Home = ({ about }) => {
+  console.log(about.home);
+
   return (
     <section className="pt-5">
       <img
@@ -6,7 +8,12 @@ export const Home = () => {
         alt="Hi Avatar"
         className="pt-5 img-fluid"
       />
-      <p className="pt-5">Welcome to my webiste!</p>
+      <p
+        className="pt-5 px-sm-5 mx-sm-5 home-description px-5"
+        style={{ whiteSpace: "pre-line" }}
+      >
+        {about.home}
+      </p>
     </section>
   );
 };

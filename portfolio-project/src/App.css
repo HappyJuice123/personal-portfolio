@@ -104,3 +104,7 @@ button {
 .navbar-active {
   font-weight: 900 !important;
 }
+
+.home-description {
+  text-align: justify;
+}
