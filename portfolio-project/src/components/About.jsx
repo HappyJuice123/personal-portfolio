@@ -5,11 +5,13 @@ import {
 
 import "react-vertical-timeline-component/style.min.css";
 
-export const About = ({ about }) => {
+export const About = ({ about, isLoading }) => {
   let workIconStyles = { background: "#2cce8a" };
   let schoolIconStyles = { background: "#ffb84f" };
 
-  return (
+  return isLoading ? (
+    <p className="pt-5">Page is Loading...</p>
+  ) : (
     <div className="pb-5 mb-5">
       <h1 className="mt-5 title">About</h1>
       <img
@@ -18,8 +20,14 @@ export const About = ({ about }) => {
         className="img-fluid"
       />
       <ul className="list-unstyled mb-5 mt-5">
-        <li key="about name">{about.name}</li>
-        <li key="about description">{about.description}</li>
+        <li key="about description" className="d-flex justify-content-center">
+          <p
+            className="pt-5 px-sm-5 mx-sm-5 home-description px-5 about-description"
+            style={{ whiteSpace: "pre-line" }}
+          >
+            {about.description}
+          </p>
+        </li>
       </ul>
       <VerticalTimeline className="">
         {about.timeline.map((element) => {
@@ -50,23 +58,15 @@ export const About = ({ about }) => {
                 )
               }
             >
-              <h2 className="vertical-timeline-element-title d-flex pt-3">
+              <h2 className="vertical-timeline-element-title d-flex">
                 {element.title}
               </h2>
-              <h5 className="vertical-timeline-element-subtitle d-flex fs-6">
+              <h5 className="vertical-timeline-element-subtitle d-flex fs-6 ">
                 {element.location}
               </h5>
               <p id="description" className="d-flex text">
                 {element.description}
               </p>
-              {/* {showButton && (
-                <a
-                  href="/"
-                  className={`button ${isWorkIcon} ? "workButton" : "schoolButton`}
-                >
-                  {element.buttonText}
-                </a>
-              )} */}
             </VerticalTimelineElement>
           );
         })}

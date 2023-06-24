@@ -12,11 +12,19 @@ import { getAbout } from "./backend/api";
 
 function App() {
   const [about, setAbout] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    getAbout().then((data) => {
-      setAbout(data);
-    });
+    setIsLoading(true);
+    getAbout()
+      .then((data) => {
+        setAbout(data);
+        setIsLoading(false);
+      })
+      .catch((err) => {
+        console.log(err);
+        setIsLoading(true);
+      });
   }, []);
 
   return (
@@ -24,8 +32,14 @@ function App() {
       <Navbar about={about} />
 
       <Routes>
-        <Route path="/" element={<Home about={about} />} />
-        <Route path="/about" element={<About about={about} />} />
+        <Route
+          path="/"
+          element={<Home about={about} isLoading={isLoading} />}
+        />
+        <Route
+          path="/about"
+          element={<About about={about} isLoading={isLoading} />}
+        />
         <Route path="/projects" element={<Projects />} />
         <Route path="/contact" element={<Contact about={about} />} />
       </Routes>

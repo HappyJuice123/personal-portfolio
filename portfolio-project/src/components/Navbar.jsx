@@ -147,7 +147,7 @@ const Navbar = ({ about }) => {
                 <a href={about.linkedin} target="_blank" rel="noreferrer">
                   <img
                     src={require("../icons/linkedin.png")}
-                    title="linkedin"
+                    title="Linkedin - Opens in new tab"
                     alt="linkedin icon"
                     className="m-md-0 p-md-0 pe-md-3 icon pt-2 mt-1"
                   />
@@ -157,7 +157,7 @@ const Navbar = ({ about }) => {
                 <a href={about.github} target="_blank" rel="noreferrer">
                   <img
                     src={require("../icons/github.png")}
-                    title="github"
+                    title="Github - Opens in new tab"
                     alt="github icon"
                     className="m-md-0 p-md-0 icon pt-2 mt-1"
                   />
