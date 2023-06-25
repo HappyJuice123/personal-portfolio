@@ -13,7 +13,6 @@ export const About = ({ about, isLoading }) => {
     <p className="pt-5">Page is Loading...</p>
   ) : (
     <div className="pb-5 mb-5">
-      <h1 className="mt-5 title">About</h1>
       <img
         src={require("../avatar/avatar-about.png")}
         alt="Jason Avatar"
