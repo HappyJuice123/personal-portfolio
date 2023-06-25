@@ -9,6 +9,7 @@ import { Contact } from "./components/Contact";
 
 import { useState, useEffect } from "react";
 import { getAbout } from "./backend/api";
+import { SingleProject } from "./components/SingleProject";
 
 function App() {
   const [about, setAbout] = useState({});
@@ -41,6 +42,7 @@ function App() {
           element={<About about={about} isLoading={isLoading} />}
         />
         <Route path="/projects" element={<Projects />} />
+        <Route path="projects/:id" element={<SingleProject />} />
         <Route path="/contact" element={<Contact about={about} />} />
       </Routes>
 

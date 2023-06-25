@@ -5,21 +5,46 @@ const api = axios.create({
 });
 
 export const getAbout = () => {
-  return api.get("/about").then((result) => {
-    return result.data.about;
-  });
+  return api
+    .get("/about")
+    .then((result) => {
+      return result.data.about;
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 };
 
 export const getProjects = () => {
-  return api.get("/projects").then((result) => {
-    console.log(result.data.projects.projects);
-    return result.data.projects.projects;
-  });
+  return api
+    .get("/projects")
+    .then((result) => {
+      return result.data.projects.projects;
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
+export const getProjectByProjectId = (id) => {
+  return api
+    .get(`/projects/${id}`)
+    .then((result) => {
+      return result.data.project;
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 };
 
 export const postMessage = (contactInfo) => {
-  return api.post("/contact", contactInfo).then((result) => {
-    console.log(result.data);
-    return result.data;
-  });
+  return api
+    .post("/contact", contactInfo)
+    .then((result) => {
+      console.log(result.data);
+      return result.data;
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 };
