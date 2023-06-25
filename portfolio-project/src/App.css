@@ -48,12 +48,35 @@
 
 .project-card {
   background-image: linear-gradient(to top right, #2b3d60, #1b273e);
+  max-width: 500px;
   cursor: pointer;
+  min-width: 300px;
+  margin: 20px 20px !important;
 }
 
 .project-card:hover {
   background-image: linear-gradient(to bottom left, #2b3d60, #1b273e);
   box-shadow: 0 0 4px;
+}
+
+.single-project {
+  max-width: 800px;
+  background-color: #2b3d60;
+}
+
+.single-project-img {
+  max-height: 500px;
+}
+
+.project-img {
+  max-height: 300px;
+}
+
+.projects-section {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 2000px;
+  justify-content: center;
 }
 
 .footer {
@@ -156,4 +179,8 @@ button {
 .about-description {
   text-align: justify;
   max-width: 800px;
+}
+
+.link {
+  cursor: pointer;
 }

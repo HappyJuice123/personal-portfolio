@@ -29,14 +29,14 @@ export const Projects = () => {
         alt="Project Avatar"
         className="img-fluid"
       />
-      <section className="">
-        <ul className="list-unstyled">
+      <section className="d-flex justify-content-center">
+        <ul className="list-unstyled projects-section">
           {projects.map((project) => {
             return (
               <li
                 key={project.name}
                 className="project-card border border-white pt-4 pb-4 w-50 mx-auto mt-4 mb-4 rounded-5"
-                title={`View ${project.name} at GitHub`}
+                title={`View ${project.name} in More Detail`}
               >
                 <Link
                   to={`/projects/${project.id}`}
@@ -48,12 +48,10 @@ export const Projects = () => {
                       <img
                         src={`http://drive.google.com/uc?export=view&id=${project.img}`}
                         alt={`${project.name}`}
-                        className="img-fluid rounded-4 border"
+                        className="img-fluid rounded-4 border project-img"
                       />
                     </p>
-                    {/* <p className="project-description p-4">
-                    {project.description}
-                  </p> */}
+
                     <p className="ps-4 pe-4">
                       Tech Stack:{" "}
                       {project.techStack.map((tech, index) => {
@@ -62,14 +60,6 @@ export const Projects = () => {
                           : tech + ", ";
                       })}
                     </p>
-                    {/* <p>
-                      <img
-                        src={require("../icons/newTab.png")}
-                        alt="new tab"
-                        className="p-2"
-                      />
-                      GitHub
-                    </p> */}
                   </div>
                 </Link>
               </li>
