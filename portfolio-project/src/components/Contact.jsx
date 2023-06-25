@@ -36,7 +36,7 @@ export const Contact = () => {
       <img
         src={require("../avatar/avatar-contact.png")}
         alt="Contact Avatar"
-        className="img-fluid"
+        className="img-fluid avatar"
       />
       <h2 className="pt-5">Contact Jason</h2>
       <section className="fs-5  d-flex flex-column align-items-center">

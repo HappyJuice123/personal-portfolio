@@ -6,7 +6,7 @@ export const Home = ({ about, isLoading }) => {
       <img
         src={require("../avatar/avatar-home.png")}
         alt="Hi Avatar"
-        className="pt-5 img-fluid"
+        className="pt-5 img-fluid avatar"
       />
       <section className="d-flex justify-content-center">
         <p

@@ -42,8 +42,8 @@
   color: white;
 }
 
-.hello {
-  color: #a2b0ce;
+.avatar {
+  max-height: 200px;
 }
 
 .project-card {

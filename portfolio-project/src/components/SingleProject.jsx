@@ -28,7 +28,7 @@ export const SingleProject = () => {
       <img
         src={require("../avatar/avatar-work.PNG")}
         alt="Working Avatar"
-        className="img-fluid"
+        className="img-fluid avatar"
       />
       <div className="single-project border border-white pt-4 pb-4 w-75 mx-auto mt-4 mb-4 rounded-5">
         <p className="fs-2">{project.name}</p>

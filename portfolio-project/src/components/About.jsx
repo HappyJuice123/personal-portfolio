@@ -16,7 +16,7 @@ export const About = ({ about, isLoading }) => {
       <img
         src={require("../avatar/avatar-about.png")}
         alt="Jason Avatar"
-        className="img-fluid"
+        className="img-fluid avatar"
       />
       <ul className="list-unstyled mb-5 mt-5">
         <li key="about description" className="d-flex justify-content-center">

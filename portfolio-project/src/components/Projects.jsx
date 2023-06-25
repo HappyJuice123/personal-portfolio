@@ -27,7 +27,7 @@ export const Projects = () => {
       <img
         src={require("../avatar/avatar-projects.png")}
         alt="Project Avatar"
-        className="img-fluid"
+        className="img-fluid avatar"
       />
       <section className="d-flex justify-content-center">
         <ul className="list-unstyled projects-section">
