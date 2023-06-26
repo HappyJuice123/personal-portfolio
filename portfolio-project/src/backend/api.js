@@ -1,7 +1,8 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://jasons-backend-api.onrender.com",
+  // baseURL: "https://jasons-backend-api.onrender.com",
+  baseURL: "http://localhost:9090",
 });
 
 export const getAbout = () => {

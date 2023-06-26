@@ -91,7 +91,6 @@
   height: 60px !important;
   width: 60px !important;
   padding: 6px !important;
-  /* border: 2px solid white !important; */
 }
 
 .tech-icon-section {
@@ -99,6 +98,11 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.tech-text {
+  font-size: 0.8rem;
+  margin-top: -1em;
 }
 
 .message-input {

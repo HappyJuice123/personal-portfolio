@@ -18,6 +18,14 @@ function App() {
   const [isTechStackLoading, setIsTechStackLoading] = useState(true);
 
   useEffect(() => {
+    getTechStack()
+      .then((data) => {
+        setTechStackObj(data);
+        setIsTechStackLoading(false);
+      })
+      .catch((err) => {
+        setIsTechStackLoading(true);
+      });
     setIsLoading(true);
     setIsTechStackLoading(true);
     getAbout()
@@ -29,19 +37,9 @@ function App() {
         console.log(err);
         setIsLoading(true);
       });
-    getTechStack()
-      .then((data) => {
-        console.log(data);
-        setTechStackObj(data);
-        setIsTechStackLoading(false);
-      })
-      .catch((err) => {
-        console.log(err);
-        setIsTechStackLoading(true);
-      });
   }, []);
 
-  return (
+  return !isLoading ? (
     <div className="App">
       <Navbar about={about} />
 
@@ -77,6 +75,8 @@ function App() {
 
       <Footer />
     </div>
+  ) : (
+    <p className="App pt-5 mt-5">Page is Loading...</p>
   );
 }
 
