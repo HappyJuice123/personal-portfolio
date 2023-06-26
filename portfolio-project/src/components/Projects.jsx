@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { getProjects } from "../backend/api";
 
-export const Projects = () => {
+export const Projects = ({ techStackObj, isTechStackLoading }) => {
   const [projects, setProjects] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -19,7 +19,11 @@ export const Projects = () => {
       });
   }, []);
 
-  return isLoading ? (
+  console.log(techStackObj, isTechStackLoading);
+
+  console.log(isLoading, isTechStackLoading);
+
+  return isLoading === true && isTechStackLoading === true ? (
     <p className="pt-5">Page is Loading...</p>
   ) : (
     <div className="mb-5 mt-5 pb-5">
@@ -29,6 +33,76 @@ export const Projects = () => {
         alt="Project Avatar"
         className="img-fluid avatar"
       />
+      <div className="d-flex justify-content-center">
+        <section className="tech-icon-section">
+          <img
+            src={require("../icons/JavaScript.svg").default}
+            alt="JavaScript Icon"
+            title="JavaScript"
+            className="tech-icon m-3 rounded-4 "
+          />
+          <img
+            src={require("../icons/HTML.svg").default}
+            alt="HTML Icon"
+            title="HTML"
+            className="tech-icon m-3 rounded-4 "
+          />
+          <img
+            src={require("../icons/CSS.svg").default}
+            alt="CSS Icon"
+            title="CSS"
+            className="tech-icon m-3 rounded-4"
+          />
+          <img
+            src={require("../icons/PostgreSQL.svg").default}
+            alt="PostgreSQL Icon"
+            title="PostgreSQL"
+            className="tech-icon m-3 rounded-4"
+          />
+          <img
+            src={require("../icons/MongoDB.svg").default}
+            alt="MongoDB Icon"
+            title="MongoDB"
+            className="tech-icon m-3 rounded-4"
+          />
+          <img
+            src={require("../icons/Firebase.svg").default}
+            alt="Firebase Icon"
+            title="Firebase"
+            className="tech-icon m-3 rounded-4"
+          />
+          <img
+            src={require("../icons/Expo.svg").default}
+            alt="Expo Icon"
+            title="Expo"
+            className="tech-icon m-3 rounded-4"
+          />
+          <img
+            src={require("../icons/Jest.svg").default}
+            alt="Jest Icon"
+            title="Jest"
+            className="tech-icon m-3 rounded-4"
+          />
+          <img
+            src={require("../icons/React.svg").default}
+            alt="React Icon"
+            title="React"
+            className="tech-icon m-3 rounded-4"
+          />
+          <img
+            src={require("../icons/Tailwind.svg").default}
+            alt="Tailwind Icon"
+            title="Tailwind"
+            className="tech-icon m-3 rounded-4"
+          />
+          <img
+            src={require("../icons/Axios.svg").default}
+            alt="Axios Icon"
+            title="Axios"
+            className="tech-icon m-3 rounded-4"
+          />
+        </section>
+      </div>
       <section className="d-flex justify-content-center">
         <ul className="list-unstyled projects-section">
           {projects.map((project) => {

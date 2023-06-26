@@ -37,6 +37,17 @@ export const getProjectByProjectId = (id) => {
     });
 };
 
+export const getTechStack = () => {
+  return api
+    .get("/techStack")
+    .then((result) => {
+      return result.data.techStack;
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
 export const postMessage = (contactInfo) => {
   return api
     .post("/contact", contactInfo)

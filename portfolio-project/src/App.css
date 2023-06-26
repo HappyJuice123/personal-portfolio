@@ -87,6 +87,20 @@
   text-align: justify;
 }
 
+.tech-icon {
+  height: 60px !important;
+  width: 60px !important;
+  padding: 6px !important;
+  /* border: 2px solid white !important; */
+}
+
+.tech-icon-section {
+  max-width: 600px !important;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .message-input {
   width: 100%;
   min-height: 150px;

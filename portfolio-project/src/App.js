@@ -8,15 +8,18 @@ import { Home } from "./components/Home";
 import { Contact } from "./components/Contact";
 
 import { useState, useEffect } from "react";
-import { getAbout } from "./backend/api";
+import { getAbout, getTechStack } from "./backend/api";
 import { SingleProject } from "./components/SingleProject";
 
 function App() {
   const [about, setAbout] = useState({});
+  const [techStackObj, setTechStackObj] = useState({});
   const [isLoading, setIsLoading] = useState(true);
+  const [isTechStackLoading, setIsTechStackLoading] = useState(true);
 
   useEffect(() => {
     setIsLoading(true);
+    setIsTechStackLoading(true);
     getAbout()
       .then((data) => {
         setAbout(data);
@@ -25,6 +28,16 @@ function App() {
       .catch((err) => {
         console.log(err);
         setIsLoading(true);
+      });
+    getTechStack()
+      .then((data) => {
+        console.log(data);
+        setTechStackObj(data);
+        setIsTechStackLoading(false);
+      })
+      .catch((err) => {
+        console.log(err);
+        setIsTechStackLoading(true);
       });
   }, []);
 
@@ -41,8 +54,24 @@ function App() {
           path="/about"
           element={<About about={about} isLoading={isLoading} />}
         />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="projects/:id" element={<SingleProject />} />
+        <Route
+          path="/projects"
+          element={
+            <Projects
+              techStackObj={techStackObj}
+              isTechStackLoading={isTechStackLoading}
+            />
+          }
+        />
+        <Route
+          path="projects/:id"
+          element={
+            <SingleProject
+              techStackObj={techStackObj}
+              isTechStackLoading={isTechStackLoading}
+            />
+          }
+        />
         <Route path="/contact" element={<Contact about={about} />} />
       </Routes>
 
