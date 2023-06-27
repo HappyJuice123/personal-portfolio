@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { getProjectByProjectId } from "../backend/api";
 import { useParams } from "react-router-dom";
 
-export const SingleProject = () => {
+export const SingleProject = ({ techStackObj, isTechStackLoading }) => {
   const { id } = useParams();
 
   const [project, setProject] = useState({});
@@ -21,9 +21,7 @@ export const SingleProject = () => {
       });
   }, [id]);
 
-  return isLoading ? (
-    <p className="pt-5">Loading Project...</p>
-  ) : (
+  return !isLoading && !isTechStackLoading ? (
     <section className="pt-5 pb-5 mb-5">
       <img
         src={require("../avatar/avatar-work.PNG")}
@@ -31,7 +29,7 @@ export const SingleProject = () => {
         className="img-fluid avatar"
       />
       <div className="single-project border border-white pt-4 pb-4 w-75 mx-auto mt-4 mb-4 rounded-5">
-        <p className="fs-2">{project.name}</p>
+        <p className="fs-2 pt-4">{project.name}</p>
         <p className="p-4">
           <img
             src={`http://drive.google.com/uc?export=view&id=${project.img}`}
@@ -39,13 +37,26 @@ export const SingleProject = () => {
             className="img-fluid rounded-4 border single-project-img"
           />
         </p>
-        <p className="project-description p-4">{project.description}</p>
-        <p className="ps-4 pe-4">
-          Tech Stack:{" "}
-          {project.techStack.map((tech, index) => {
-            return index === project.techStack.length - 1 ? tech : tech + ", ";
-          })}
-        </p>
+        <p className="project-description py-3 px-5">{project.description}</p>
+        <section className="d-flex justify-content-center pb-3">
+          <div className="ps-4 pe-4 tech-icon-section">
+            {project.techStack.map((tech) => {
+              return techStackObj[tech] ? (
+                <div key={project + tech}>
+                  <img
+                    src={require(`../icons/${tech}.svg`)}
+                    alt={`${tech} Icon`}
+                    title={tech}
+                    className="tech-icon m-3 rounded-4"
+                  />
+                  <p className="tech-text">{tech}</p>
+                </div>
+              ) : (
+                <p key={project + tech}>not there</p>
+              );
+            })}
+          </div>
+        </section>
         <div className="d-flex justify-content-center">
           <a
             href={project.github}
@@ -86,5 +97,7 @@ export const SingleProject = () => {
         ) : null}
       </div>
     </section>
+  ) : (
+    <p className="pt-5">Loading Project...</p>
   );
 };

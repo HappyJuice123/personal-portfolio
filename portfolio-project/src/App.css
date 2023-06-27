@@ -48,15 +48,19 @@
 
 .project-card {
   background-image: linear-gradient(to top right, #2b3d60, #1b273e);
-  max-width: 500px;
-  cursor: pointer;
-  min-width: 300px;
+  max-width: 500px !important;
+  cursor: pointer !important;
+  min-width: 300px !important;
   margin: 20px 20px !important;
 }
 
 .project-card:hover {
   background-image: linear-gradient(to bottom left, #2b3d60, #1b273e);
   box-shadow: 0 0 4px;
+}
+
+.project-link {
+  height: 100% !important;
 }
 
 .single-project {
