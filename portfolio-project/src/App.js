@@ -41,7 +41,7 @@ function App() {
 
   return !isLoading ? (
     <div className="App">
-      <Navbar about={about} />
+      <Navbar about={about} isLoading={isLoading} />
 
       <Routes>
         <Route
@@ -70,7 +70,10 @@ function App() {
             />
           }
         />
-        <Route path="/contact" element={<Contact about={about} />} />
+        <Route
+          path="/contact"
+          element={<Contact about={about} isLoading={isLoading} />}
+        />
       </Routes>
 
       <Footer />

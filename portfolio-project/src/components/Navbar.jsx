@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-const Navbar = ({ about }) => {
+const Navbar = ({ about, isLoading }) => {
   const [homeActive, setHomeActive] = useState(false);
   const [aboutActive, setAboutActive] = useState(false);
   const [projectsActive, setProjectsActive] = useState(false);
@@ -49,7 +49,7 @@ const Navbar = ({ about }) => {
     setContactActive(false);
   };
 
-  return (
+  return !isLoading ? (
     <div className="navbar-bg">
       <nav className="navbar navbar-expand-md">
         <div className="container-fluid ps-5 m-0 d-flex flex-row">
@@ -168,6 +168,8 @@ const Navbar = ({ about }) => {
         </div>
       </nav>
     </div>
+  ) : (
+    <p className="pt-5">Page is Loading...</p>
   );
 };
 

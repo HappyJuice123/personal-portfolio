@@ -43,7 +43,7 @@
 }
 
 .avatar {
-  max-height: 200px;
+  max-height: 200px !important;
 }
 
 .project-card {
@@ -116,7 +116,8 @@
   max-width: 500px;
 }
 
-#email {
+#email,
+#form-name {
   width: 100%;
   max-width: 500px;
 }
@@ -126,13 +127,36 @@
   width: 25%;
 }
 
+.message-submitted {
+  text-align: justify;
+}
+
 button {
   width: 200px;
+  background-color: black;
+  border: 0px;
+  font-weight: bolder !important;
+  vertical-align: -0.125em !important;
+}
+
+button:hover {
+  background-color: #2f3d5a;
+}
+
+.button-text {
+  vertical-align: middle !important;
+
+  padding-top: 0.5em !important;
 }
 
 .contact {
   min-width: 500px;
   width: 25%;
+}
+
+.contact-img-section {
+  max-width: 300px !important;
+  min-width: 100px !important;
 }
 
 .icon {
