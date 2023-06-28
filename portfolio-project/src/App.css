@@ -133,7 +133,8 @@
 
 button {
   width: 200px;
-  background-color: black;
+  background-color: white;
+  color: black !important;
   border: 0px;
   font-weight: bolder !important;
   vertical-align: -0.125em !important;
@@ -145,7 +146,7 @@ button:hover {
 
 .button-text {
   vertical-align: middle !important;
-
+  color: black !important;
   padding-top: 0.5em !important;
 }
 
@@ -159,8 +160,18 @@ button:hover {
   min-width: 100px !important;
 }
 
-.icon {
-  fill: white;
+input {
+  border: 0px !important;
+  border-bottom: 1px white double !important;
+  background-color: transparent;
+  color: white !important;
+  cursor: text !important;
+}
+
+textarea {
+  background-color: transparent !important;
+  border: 1px white double;
+  color: white !important;
 }
 
 .navbar-toggler:focus,

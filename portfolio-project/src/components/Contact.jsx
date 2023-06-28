@@ -1,24 +1,20 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { postMessage } from "../backend/api";
 
 export const Contact = ({ about, isLoading }) => {
-  const [cursorPosition, setCursorPosition] = useState(0);
-  const textareaRef = useRef(null);
   const [messageSubmitted, setMessageSubmitted] = useState(false);
   const [message, setMessage] = useState("");
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
 
   const handleTextAreaChange = (event) => {
-    const { selectionStart } = event.target;
-    setCursorPosition(selectionStart);
+    console.log(event);
     setMessage(event.target.value);
   };
 
   const handleSubmit = (event) => {
-    const contactInfo = { email: email, name: name, message: message };
-
     event.preventDefault();
+    const contactInfo = { email: email, name: name, message: message };
 
     postMessage(contactInfo)
       .then(() => {
@@ -34,14 +30,7 @@ export const Contact = ({ about, isLoading }) => {
 
   useEffect(() => {
     setMessageSubmitted(false);
-    const timer = setTimeout(() => {
-      textareaRef.current.focus();
-    }, 10);
-
-    return () => {
-      clearTimeout(timer);
-    };
-  }, [cursorPosition]);
+  }, []);
 
   return !isLoading ? (
     <section className="pt-5 pb-5 d-flex justify-content-center">
@@ -64,7 +53,7 @@ export const Contact = ({ about, isLoading }) => {
             >
               <section className=" w-100">
                 <label
-                  className="p-1 d-flex justify-content-start fs-4"
+                  className="p-1 pb-0 d-flex justify-content-start fs-4"
                   htmlFor="form-name"
                 >
                   Name:
@@ -72,34 +61,37 @@ export const Contact = ({ about, isLoading }) => {
                 <input
                   type="text"
                   id="form-name"
-                  className="p-2 pb-0"
+                  className="p-2 pb-0 mb-3"
                   required
                   value={name}
                   onChange={(event) => {
                     setName(event.target.value);
                   }}
+                  placeholder="Name"
                 />
+
                 <label
                   htmlFor="email"
-                  className="justify-content-start d-flex p-1 pb-0 fs-4 pt-3"
+                  className="justify-content-start d-flex p-1 pb-0 fs-4 pt-4"
                 >
                   Email Address:
                 </label>
                 <input
-                  type="text"
+                  type="email"
                   id="email"
-                  className="p-2 pb-0"
+                  className={`p-2 pb-0 mb-3`}
                   required
                   onChange={(event) => {
                     setEmail(event.target.value);
                   }}
                   value={email}
                   placeholder="Email"
-                />{" "}
+                />
+
                 <br></br>
                 <label
                   htmlFor="message"
-                  className="justify-content-start d-flex p-1 pb-0 fs-4 pt-3"
+                  className="justify-content-start d-flex p-1 pb-0 fs-4 pt-4"
                 >
                   Message:
                 </label>
@@ -109,13 +101,10 @@ export const Contact = ({ about, isLoading }) => {
                   className="p-3 message-input mt-0"
                   id="message"
                   onChange={handleTextAreaChange}
-                  ref={textareaRef}
-                  style={{
-                    resize: "vertical",
-                  }}
                   required
                   value={message}
-                />
+                ></textarea>
+
                 <br></br>
                 <section className="d-flex justify-content-center">
                   <button
