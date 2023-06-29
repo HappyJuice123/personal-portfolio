@@ -69,6 +69,7 @@ export const Projects = ({ techStackObj, isTechStackLoading }) => {
                     <section className="d-flex justify-content-center">
                       <div className="ps-4 pe-4 tech-icon-section">
                         {project.techStack.map((tech) => {
+                          console.log(tech);
                           return techStackObj[tech] ? (
                             <div key={project + tech}>
                               <img
@@ -80,7 +81,15 @@ export const Projects = ({ techStackObj, isTechStackLoading }) => {
                               <p className="tech-text">{tech}</p>
                             </div>
                           ) : (
-                            <p key={project + tech}>not there</p>
+                            <div key={project + tech}>
+                              <img
+                                src={require(`../icons/Tech.svg`).default}
+                                alt={`${tech} Icon`}
+                                title={tech}
+                                className="tech-icon m-3 rounded-4"
+                              />
+                              <p className="tech-text">{tech}</p>
+                            </div>
                           );
                         })}
                       </div>

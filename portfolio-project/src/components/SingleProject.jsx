@@ -52,7 +52,15 @@ export const SingleProject = ({ techStackObj, isTechStackLoading }) => {
                   <p className="tech-text">{tech}</p>
                 </div>
               ) : (
-                <p key={project + tech}>not there</p>
+                <div key={project + tech}>
+                  <img
+                    src={require(`../icons/Tech.svg`).default}
+                    alt={`${tech} Icon`}
+                    title={tech}
+                    className="tech-icon m-3 rounded-4"
+                  />
+                  <p className="tech-text">{tech}</p>
+                </div>
               );
             })}
           </div>

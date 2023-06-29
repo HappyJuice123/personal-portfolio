@@ -2,10 +2,11 @@ import React, { useState, useEffect } from "react";
 import { postMessage } from "../backend/api";
 
 export const Contact = ({ about, isLoading }) => {
-  const [messageSubmitted, setMessageSubmitted] = useState(true);
+  const [messageSubmitted, setMessageSubmitted] = useState(false);
   const [message, setMessage] = useState("");
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
+  const [err, setErr] = useState(null);
 
   const handleTextAreaChange = (event) => {
     console.log(event);
@@ -25,11 +26,13 @@ export const Contact = ({ about, isLoading }) => {
       })
       .catch((err) => {
         console.log(err);
+        setMessageSubmitted(false);
+        setErr("Something went wrong, please try again.");
       });
   };
 
   useEffect(() => {
-    setMessageSubmitted(true);
+    setMessageSubmitted(false);
   }, []);
 
   return !isLoading ? (
@@ -144,6 +147,7 @@ export const Contact = ({ about, isLoading }) => {
                   </p>
                 ) : null}
               </section>
+              <section>{err ? <p>{err}</p> : null}</section>
             </form>
           </div>
         </div>
