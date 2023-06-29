@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { postMessage } from "../backend/api";
 
 export const Contact = ({ about, isLoading }) => {
-  const [messageSubmitted, setMessageSubmitted] = useState(false);
+  const [messageSubmitted, setMessageSubmitted] = useState(true);
   const [message, setMessage] = useState("");
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
@@ -29,30 +29,31 @@ export const Contact = ({ about, isLoading }) => {
   };
 
   useEffect(() => {
-    setMessageSubmitted(false);
+    setMessageSubmitted(true);
   }, []);
 
   return !isLoading ? (
-    <section className="pt-5 pb-5 d-flex justify-content-center">
-      <section className="d-flex border">
-        <div className="align-items-center d-flex flex-column justify-content-center ms-5 ps-5 w-100 contact-img-section">
-          <img
-            src={require("../avatar/avatar-contact.png")}
-            alt="Contact Avatar"
-            className="img-fluid avatar align-items-center justify-content-center"
-          />
-        </div>
-        <div className="ms-5 me-5 pe-5">
-          <div className="d-flex flex-column align-items-start">
+    <section className="pb-5 d-flex justify-content-center">
+      <section className="d-flex flex-column mb-5">
+        <div className="ms-5 me-5">
+          <div className="d-flex flex-column align-items-center">
             <h2 className="pt-5">Contact Jason</h2>
-            <p className="pt-4">E: {about.email}</p>
+            <div className="align-items-center d-flex flex-column justify-content-center contact-img-section my-3">
+              <img
+                src={require("../avatar/avatar-contact.png")}
+                alt="Contact Avatar"
+                className="img-fluid avatar align-items-center justify-content-center"
+              />
+            </div>
+            <p className="pt-4 fs-5">Jason Chan</p>
+            <p className="fs-5">E: {about.email}</p>
             <p className="d-flex justify-content-center">
               <a href={about.linkedin} target="_blank" rel="noreferrer">
                 <img
                   src={require("../icons/linkedin.png")}
                   title="Linkedin - Opens in new tab"
                   alt="linkedin icon"
-                  className="m-md-0 p-md-0 pe-md-3 icon pt-2 mt-1"
+                  className="m-md-0 p-md-0 pe-md-3 icon mx-2"
                 />
               </a>
               <a href={about.github} target="_blank" rel="noreferrer">
@@ -60,7 +61,7 @@ export const Contact = ({ about, isLoading }) => {
                   src={require("../icons/github.png")}
                   title="Github - Opens in new tab"
                   alt="github icon"
-                  className="m-md-0 p-md-0 icon pt-2 mt-1"
+                  className="m-md-0 p-md-0 icon mx-2"
                 />
               </a>
             </p>
@@ -73,7 +74,7 @@ export const Contact = ({ about, isLoading }) => {
                   className="p-1 pb-0 d-flex justify-content-start fs-4"
                   htmlFor="form-name"
                 >
-                  Name:
+                  Name *
                 </label>
                 <input
                   type="text"
@@ -91,7 +92,7 @@ export const Contact = ({ about, isLoading }) => {
                   htmlFor="email"
                   className="justify-content-start d-flex p-1 pb-0 fs-4 pt-4"
                 >
-                  Email Address:
+                  Email Address *
                 </label>
                 <input
                   type="email"
@@ -110,11 +111,11 @@ export const Contact = ({ about, isLoading }) => {
                   htmlFor="message"
                   className="justify-content-start d-flex p-1 pb-0 fs-4 pt-4"
                 >
-                  Message:
+                  Message *
                 </label>
                 <textarea
                   type="text"
-                  placeholder="Enter Message..."
+                  placeholder="Your Message..."
                   className="p-3 message-input mt-0"
                   id="message"
                   onChange={handleTextAreaChange}
@@ -134,138 +135,19 @@ export const Contact = ({ about, isLoading }) => {
                   </button>
                 </section>
               </section>
+              <section className="pt-5">
+                {messageSubmitted ? (
+                  <p className="message-submitted">
+                    Thank you for submitting your message, you will receive a
+                    confirmation email shortly. I will aim to get back to you as
+                    soon as I can.
+                  </p>
+                ) : null}
+              </section>
             </form>
-            <p className="d-flex w-100  justify-content-center pt-3">
-              <a href={about.linkedin} target="_blank" rel="noreferrer">
-                <img
-                  src={require("../icons/linkedin.png")}
-                  title="Linkedin - Opens in new tab"
-                  alt="linkedin icon"
-                  className="m-md-0 p-md-0 pe-md-3 icon pt-2 mt-1"
-                />
-              </a>
-              <a href={about.github} target="_blank" rel="noreferrer">
-                <img
-                  src={require("../icons/github.png")}
-                  title="Github - Opens in new tab"
-                  alt="github icon"
-                  className="m-md-0 p-md-0 icon pt-2 mt-1"
-                />
-              </a>
-            </p>
           </div>
-          <section className="pt-5">
-            {messageSubmitted ? (
-              <p className="message-submitted">
-                Thank you for submitting your message, you will receive a
-                confirmation email shortly. I will aim to get back to you within
-                two working days.
-              </p>
-            ) : null}
-          </section>
         </div>
       </section>
-      {/* <img
-        src={require("../avatar/avatar-contact.png")}
-        alt="Contact Avatar"
-        className="img-fluid avatar"
-      />
-      <h2 className="pt-5">Contact Information</h2>
-      <section className="fs-5  d-flex flex-column align-items-center">
-        <section className="w-25 d-flex flex-column align-items-start contact pt-2 p-2">
-          <p>Email: {about.email}</p>
-          <p>Phone: {about.phone}</p>
-          <div className="w-100">
-            <p>
-              <a href={about.linkedin} target="_blank" rel="noreferrer">
-                <img
-                  src={require("../icons/linkedin.png")}
-                  title="Linkedin - Opens in new tab"
-                  alt="linkedin icon"
-                  className="m-md-0 p-md-0 pe-md-3 icon pt-2 mt-1"
-                />
-              </a>
-              <a href={about.github} target="_blank" rel="noreferrer">
-                <img
-                  src={require("../icons/github.png")}
-                  title="Github - Opens in new tab"
-                  alt="github icon"
-                  className="m-md-0 p-md-0 icon pt-2 mt-1"
-                />
-              </a>
-            </p>
-          </div>
-        </section>
-      </section>
-      <h2 className="pt-5">Send a Message</h2>
-      <section className="d-flex flex-column align-items-center">
-        <form
-          className="form p-2 d-flex flex-column justify-content-center align-items-center"
-          onSubmit={handleSubmit}
-        >
-          <section className=" w-100">
-            <label
-              className="p-1 d-flex justify-content-start fs-4"
-              htmlFor="form-name"
-            >
-              Name:
-            </label>
-            <input type="text" id="form-name" className="p-2 pb-0" />
-            <label
-              htmlFor="email-input"
-              className="justify-content-start d-flex p-1 pb-0 fs-4 pt-3"
-            >
-              Email Address:
-            </label>
-            <input
-              type="text"
-              id="email-input"
-              className="p-2 pb-0"
-              required
-              onChange={(event) => {
-                setEmail(event.target.value);
-              }}
-              value={email}
-              placeholder="Email"
-            />{" "}
-            <br></br>
-            <label
-              htmlFor="message"
-              className="justify-content-start d-flex p-1 pb-0 fs-4 pt-3"
-            >
-              Message:
-            </label>
-            <textarea
-              type="text"
-              placeholder="Enter Message..."
-              className="p-3 message-input mt-0"
-              id="message"
-              onChange={handleTextAreaChange}
-              ref={textareaRef}
-              style={{
-                resize: "vertical",
-              }}
-              required
-              value={message}
-            />
-            <br></br>
-            <section className="d-flex justify-content-center">
-              <button type="submit" className="mt-4 pt-2 pb-0 fs-5 rounded-4 ">
-                Send
-              </button>
-            </section>
-          </section>
-        </form>
-        <section className="pt-5 w-50">
-          {messageSubmitted ? (
-            <p>
-              Thank you for submitting your message, you will receive a
-              confirmation email shortly. I will aim to get back to you within
-              two working days.
-            </p>
-          ) : null}
-        </section>
-      </section> */}
     </section>
   ) : (
     <p className="pt-5">Page is Loading...</p>

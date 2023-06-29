@@ -127,6 +127,18 @@
   width: 25%;
 }
 
+@media only screen and (max-width: 630px) {
+  .form {
+    min-width: 350px;
+  }
+}
+
+@media only screen and (min-width: 350px) and (max-width: 450px) {
+  .form {
+    min-width: 250px;
+  }
+}
+
 .message-submitted {
   text-align: justify;
 }
@@ -153,11 +165,6 @@ button:hover {
 .contact {
   min-width: 500px;
   width: 25%;
-}
-
-.contact-img-section {
-  max-width: 300px !important;
-  min-width: 100px !important;
 }
 
 input {

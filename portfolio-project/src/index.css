@@ -1,6 +1,6 @@
 @font-face {
   font-family: "custom";
-  src: local(spotify),
+  src: local(custom),
     url("./fonts/Yantramanav/Yantramanav-Light.ttf") format("truetype");
 }
 
