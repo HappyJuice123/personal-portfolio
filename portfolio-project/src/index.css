@@ -1,20 +1,21 @@
 @font-face {
-  font-family: "spotify";
+  font-family: "custom";
   src: local(spotify),
-    url("./fonts/Spotify-Font/GothamLight.ttf") format("truetype");
+    url("./fonts/Yantramanav/Yantramanav-Light.ttf") format("truetype");
 }
 
 body {
   margin: 0;
-  font-family: "spotify";
-  font-weight: 100;
+  font-family: "custom", "Gill Sans", "Gill Sans MT", "Calibri", "Trebuchet MS",
+    sans-serif;
+  font-weight: 500;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #1b273e;
   color: white;
 }
 
-/* code {
+code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-} */
+}

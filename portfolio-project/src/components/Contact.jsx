@@ -46,7 +46,24 @@ export const Contact = ({ about, isLoading }) => {
           <div className="d-flex flex-column align-items-start">
             <h2 className="pt-5">Contact Jason</h2>
             <p className="pt-4">E: {about.email}</p>
-            <p>M: {about.phone}</p>
+            <p className="d-flex justify-content-center">
+              <a href={about.linkedin} target="_blank" rel="noreferrer">
+                <img
+                  src={require("../icons/linkedin.png")}
+                  title="Linkedin - Opens in new tab"
+                  alt="linkedin icon"
+                  className="m-md-0 p-md-0 pe-md-3 icon pt-2 mt-1"
+                />
+              </a>
+              <a href={about.github} target="_blank" rel="noreferrer">
+                <img
+                  src={require("../icons/github.png")}
+                  title="Github - Opens in new tab"
+                  alt="github icon"
+                  className="m-md-0 p-md-0 icon pt-2 mt-1"
+                />
+              </a>
+            </p>
             <form
               className="form py-2 d-flex flex-column justify-content-center align-items-center pt-4"
               onSubmit={handleSubmit}
@@ -61,7 +78,7 @@ export const Contact = ({ about, isLoading }) => {
                 <input
                   type="text"
                   id="form-name"
-                  className="p-2 pb-0 mb-3"
+                  className="p-2 mb-3"
                   required
                   value={name}
                   onChange={(event) => {
@@ -79,7 +96,7 @@ export const Contact = ({ about, isLoading }) => {
                 <input
                   type="email"
                   id="email"
-                  className={`p-2 pb-0 mb-3`}
+                  className={`p-2 mb-3`}
                   required
                   onChange={(event) => {
                     setEmail(event.target.value);

@@ -58,7 +58,7 @@ const Navbar = ({ about, isLoading }) => {
             className="text-decoration-none"
             onClick={handleBrandClick}
           >
-            <div className="pt-3 align-items-center">
+            <div className="align-items-center">
               <p className="navbar-brand fs-1 text-white p-0 m-0">Jason Chan</p>
             </div>
           </Link>
@@ -82,7 +82,7 @@ const Navbar = ({ about, isLoading }) => {
             className="collapse navbar-collapse justify-content-end me-2 m-0 p-0 navbar-dropdown ps-2"
             id="navbarSupportedContent"
           >
-            <ul className="navbar-nav mb-0 align-items-center">
+            <ul className="navbar-nav mb-0 align-items-center pe-3">
               <li className="nav-item" key="navbar-home">
                 <Link
                   to="/"
@@ -90,7 +90,7 @@ const Navbar = ({ about, isLoading }) => {
                   onClick={handleHomeNavbar}
                 >
                   <p
-                    className={`fs-5 text-white d-flex flex-column justify-content-center align-items-center m-0 p-0 pt-2 px-1 mt-1 navbar-text ${
+                    className={`fs-5 text-white d-flex flex-column justify-content-center align-items-center m-0 p-0 px-1 mt-1 navbar-text ${
                       homeActive ? "navbar-active" : null
                     }`}
                   >
@@ -105,7 +105,7 @@ const Navbar = ({ about, isLoading }) => {
                   onClick={handleAboutNavbar}
                 >
                   <p
-                    className={`fs-5 text-white d-flex flex-column justify content-center align-items-center m-0 p-0 pt-2 px-1 mt-1 navbar-text ${
+                    className={`fs-5 text-white d-flex flex-column justify content-center align-items-center m-0 p-0 px-1 mt-1 navbar-text ${
                       aboutActive ? "navbar-active" : null
                     }`}
                   >
@@ -120,7 +120,7 @@ const Navbar = ({ about, isLoading }) => {
                   onClick={handleProjectsNavbar}
                 >
                   <p
-                    className={`fs-5 text-white d-flex flex-column justify content-center align-items-center m-0 p-0 pt-2 px-1 mt-1 navbar-text ${
+                    className={`fs-5 text-white d-flex flex-column justify content-center align-items-center m-0 p-0 px-1 mt-1 navbar-text ${
                       projectsActive ? "navbar-active" : null
                     }`}
                   >
@@ -135,7 +135,7 @@ const Navbar = ({ about, isLoading }) => {
                   onClick={handleContactNavbar}
                 >
                   <p
-                    className={`fs-5 text-white d-flex flex-column justify content-center align-items-center m-0 p-0 pt-2 px-1 mt-1 navbar-text ${
+                    className={`fs-5 text-white d-flex flex-column justify content-center align-items-center m-0 p-0 px-1 mt-1 navbar-text ${
                       contactActive ? "navbar-active" : null
                     }`}
                   >
