@@ -20,7 +20,7 @@ export const getProjects = () => {
   return api
     .get("/projects")
     .then((result) => {
-      return result.data.projects.projects;
+      return result.data.projects;
     })
     .catch((err) => {
       console.log(err);
