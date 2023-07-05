@@ -57,13 +57,13 @@ export const About = ({ about, isLoading }) => {
                 )
               }
             >
-              <h2 className="vertical-timeline-element-title d-flex">
+              <h2 className="vertical-timeline-element-title d-flex fw-bolder">
                 {element.title}
               </h2>
-              <h5 className="vertical-timeline-element-subtitle d-flex fs-6 ">
+              <h5 className="vertical-timeline-element-subtitle d-flex fs-6 fw-bold">
                 {element.location}
               </h5>
-              <p id="description" className="d-flex text">
+              <p id="description" className="d-flex text fw-lighter">
                 {element.description}
               </p>
             </VerticalTimelineElement>

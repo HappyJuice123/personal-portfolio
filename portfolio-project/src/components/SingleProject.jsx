@@ -7,6 +7,7 @@ export const SingleProject = ({ techStackObj, isTechStackLoading }) => {
 
   const [project, setProject] = useState({});
   const [isLoading, setIsLoading] = useState(true);
+  const [projectExists, setProjectExists] = useState(true);
 
   useEffect(() => {
     setIsLoading(true);
@@ -14,14 +15,21 @@ export const SingleProject = ({ techStackObj, isTechStackLoading }) => {
       .then((data) => {
         setIsLoading(false);
         setProject(data);
+        setProjectExists(true);
+        console.log("this is inside then block");
       })
       .catch((err) => {
         setIsLoading(true);
         console.log(err);
+        setProjectExists(false);
       });
   }, [id]);
 
-  return !isLoading && !isTechStackLoading ? (
+  console.log(projectExists);
+
+  return !projectExists ? (
+    <p className="pt-5">Error 404 - This project does not exist.</p>
+  ) : !isLoading && !isTechStackLoading ? (
     <section className="pt-5 pb-5 mb-5">
       <img
         src={require("../avatar/avatar-work.PNG")}

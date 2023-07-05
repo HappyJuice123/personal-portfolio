@@ -40,6 +40,7 @@
 .navbar-bg {
   background-image: linear-gradient(to top left, #2b3d60, #1b273e);
   color: white;
+  min-width: 300px !important;
 }
 
 .avatar {
@@ -135,7 +136,21 @@
 
 @media only screen and (min-width: 350px) and (max-width: 450px) {
   .form {
-    min-width: 250px;
+    min-width: 300px;
+    overflow: auto !important;
+  }
+}
+
+@media only screen and (min-width: 0px) and (max-width: 350px) {
+  .form {
+    min-width: 300px;
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+
+  .contact-page {
+    min-width: 300px !important;
+    overflow-x: auto !important;
   }
 }
 
@@ -144,22 +159,21 @@
 }
 
 button {
-  width: 200px;
+  width: 150px;
+  height: 35px;
   background-color: white;
   color: black !important;
   border: 0px;
   font-weight: bolder !important;
-  vertical-align: -0.125em !important;
 }
 
 button:hover {
-  background-color: #2f3d5a;
+  background-color: #dcdcdc;
 }
 
 .button-text {
   vertical-align: middle !important;
   color: black !important;
-  padding-top: 0.5em !important;
 }
 
 .contact {

@@ -69,7 +69,6 @@ export const Projects = ({ techStackObj, isTechStackLoading }) => {
                     <section className="d-flex justify-content-center">
                       <div className="ps-4 pe-4 tech-icon-section">
                         {project.techStack.map((tech) => {
-                          console.log(tech);
                           return techStackObj[tech] ? (
                             <div key={project + tech}>
                               <img

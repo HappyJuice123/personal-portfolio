@@ -6,57 +6,32 @@ const api = axios.create({
 });
 
 export const getAbout = () => {
-  return api
-    .get("/about")
-    .then((result) => {
-      return result.data.about;
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+  return api.get("/about").then((result) => {
+    return result.data.about;
+  });
 };
 
 export const getProjects = () => {
-  return api
-    .get("/projects")
-    .then((result) => {
-      return result.data.projects;
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+  return api.get("/projects").then((result) => {
+    return result.data.projects;
+  });
 };
 
 export const getProjectByProjectId = (id) => {
-  return api
-    .get(`/projects/${id}`)
-    .then((result) => {
-      return result.data.project;
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+  return api.get(`/projects/${id}`).then((result) => {
+    return result.data.project;
+  });
 };
 
 export const getTechStack = () => {
-  return api
-    .get("/techStack")
-    .then((result) => {
-      return result.data.techStack;
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+  return api.get("/techStack").then((result) => {
+    return result.data.techStack;
+  });
 };
 
 export const postMessage = (contactInfo) => {
-  return api
-    .post("/contact", contactInfo)
-    .then((result) => {
-      console.log(result.data);
-      return result.data;
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+  return api.post("/contact", contactInfo).then((result) => {
+    console.log(result.data);
+    return result.data;
+  });
 };

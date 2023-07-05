@@ -36,9 +36,9 @@ export const Contact = ({ about, isLoading }) => {
   }, []);
 
   return !isLoading ? (
-    <section className="pb-5 d-flex justify-content-center">
+    <section className="pb-5 d-flex justify-content-center contact-page">
       <section className="d-flex flex-column mb-5">
-        <div className="ms-5 me-5">
+        <div className="mx-5">
           <div className="d-flex flex-column align-items-center">
             <h2 className="pt-5">Contact Jason</h2>
             <div className="align-items-center d-flex flex-column justify-content-center contact-img-section my-3">
@@ -74,7 +74,7 @@ export const Contact = ({ about, isLoading }) => {
             >
               <section className=" w-100">
                 <label
-                  className="p-1 pb-0 d-flex justify-content-start fs-4"
+                  className="p-1 pb-0 d-flex justify-content-start fs-5"
                   htmlFor="form-name"
                 >
                   Name *
@@ -93,7 +93,7 @@ export const Contact = ({ about, isLoading }) => {
 
                 <label
                   htmlFor="email"
-                  className="justify-content-start d-flex p-1 pb-0 fs-4 pt-4"
+                  className="justify-content-start d-flex p-1 pb-0 fs-5 pt-4"
                 >
                   Email Address *
                 </label>
@@ -112,7 +112,7 @@ export const Contact = ({ about, isLoading }) => {
                 <br></br>
                 <label
                   htmlFor="message"
-                  className="justify-content-start d-flex p-1 pb-0 fs-4 pt-4"
+                  className="justify-content-start d-flex p-1 pb-0 fs-5 pt-4"
                 >
                   Message *
                 </label>
