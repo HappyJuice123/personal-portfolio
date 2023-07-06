@@ -76,7 +76,7 @@ function App() {
         />
       </Routes>
 
-      <Footer />
+      <Footer about={about} isLoading={isLoading} />
     </div>
   ) : (
     <p className="App pt-5 mt-5">Page is Loading...</p>

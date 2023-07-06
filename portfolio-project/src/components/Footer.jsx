@@ -1,15 +1,36 @@
-export const Footer = () => {
+export const Footer = ({ about }) => {
   return (
-    <div className="border-top border-dark d-flex flex-column fixed-bottom pb-3 footer">
-      <span className="mt-3">
+    <div className="footer d-flex flex-column justify-content-center py-2">
+      <p className="fs-6 footer-content">Jason Chan &copy; </p>
+
+      <p className="d-flex justify-content-center footer-content">
+        <a href={about.linkedin} target="_blank" rel="noreferrer">
+          <img
+            src={require("../icons/linkedin.png")}
+            title="Linkedin - Opens in new tab"
+            alt="linkedin icon"
+            className="m-md-0 p-md-0 pe-md-3 footer-icon mx-2"
+          />
+        </a>
+        <a href={about.github} target="_blank" rel="noreferrer">
+          <img
+            src={require("../icons/github.png")}
+            title="Github - Opens in new tab"
+            alt="github icon"
+            className="m-md-0 p-md-0 footer-icon mx-2"
+          />
+        </a>
+      </p>
+
+      <p className="footer-content pt-2">
         <a
-          href="https://www.flaticon.com/free-icons/linkedin"
+          href="https://www.flaticon.com/authors/freepik"
           title="linkedin icons"
-          className="mt-3"
+          className="text-white text-decoration-none footer-credit"
         >
           Icons created by Freepik - Flaticon
         </a>
-      </span>
+      </p>
     </div>
   );
 };

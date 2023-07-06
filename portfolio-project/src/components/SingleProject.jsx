@@ -30,7 +30,7 @@ export const SingleProject = ({ techStackObj, isTechStackLoading }) => {
   return !projectExists ? (
     <p className="pt-5">Error 404 - This project does not exist.</p>
   ) : !isLoading && !isTechStackLoading ? (
-    <section className="pt-5 pb-5 mb-5">
+    <section className="pt-5 pb-5 mb-5 main">
       <img
         src={require("../avatar/avatar-work.PNG")}
         alt="Working Avatar"

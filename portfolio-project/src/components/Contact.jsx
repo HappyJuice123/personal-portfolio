@@ -36,8 +36,8 @@ export const Contact = ({ about, isLoading }) => {
   }, []);
 
   return !isLoading ? (
-    <section className="pb-5 d-flex justify-content-center contact-page">
-      <section className="d-flex flex-column mb-5">
+    <section className="d-flex justify-content-center contact-page main">
+      <section className="d-flex flex-column">
         <div className="mx-5">
           <div className="d-flex flex-column align-items-center">
             <h2 className="pt-5">Contact Jason</h2>
