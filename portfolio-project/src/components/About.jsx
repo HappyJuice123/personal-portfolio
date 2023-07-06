@@ -12,7 +12,7 @@ export const About = ({ about, isLoading }) => {
   return isLoading ? (
     <p className="pt-5">Page is Loading...</p>
   ) : (
-    <div className="pb-5 mb-5 main mt-5">
+    <div className="mb-5 main mt-5">
       <h2>About Me</h2>
       <img
         src={require("../avatar/avatar-about.png")}

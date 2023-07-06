@@ -149,7 +149,7 @@ const Navbar = ({ about, isLoading }) => {
                     src={require("../icons/linkedin.png")}
                     title="Linkedin - Opens in new tab"
                     alt="linkedin icon"
-                    className="m-md-0 p-md-0 pe-md-3 icon pt-2 mt-1"
+                    className="m-md-0 p-md-0 me-md-3 icon pt-2 mt-1"
                   />
                 </a>
               </li>

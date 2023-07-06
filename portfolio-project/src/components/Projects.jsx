@@ -20,7 +20,7 @@ export const Projects = ({ techStackObj, isTechStackLoading }) => {
   }, []);
 
   return !isLoading && !isTechStackLoading ? (
-    <div className="mb-5 mt-5 pb-5 main">
+    <div className="mb-5 mt-5 main">
       <h2>Projects</h2>
       <img
         src={require("../avatar/avatar-projects.png")}

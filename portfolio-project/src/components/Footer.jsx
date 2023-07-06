@@ -9,7 +9,7 @@ export const Footer = ({ about }) => {
             src={require("../icons/linkedin.png")}
             title="Linkedin - Opens in new tab"
             alt="linkedin icon"
-            className="m-md-0 p-md-0 pe-md-3 footer-icon mx-2"
+            className="m-md-0 p-md-0 me-md-3 footer-icon mx-2"
           />
         </a>
         <a href={about.github} target="_blank" rel="noreferrer">

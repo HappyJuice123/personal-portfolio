@@ -2,7 +2,7 @@ export const Home = ({ about, isLoading }) => {
   return isLoading ? (
     <p className="pt-5">Page is Loading...</p>
   ) : (
-    <section className="pb-5 mb-5 main">
+    <section className="mb-5 main">
       <img
         src={require("../avatar/avatar-home.png")}
         alt="Hi Avatar"
