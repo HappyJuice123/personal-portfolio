@@ -46,9 +46,11 @@
 }
 
 .navbar-bg {
-  background-image: linear-gradient(to top left, #2b3d60, #1b273e);
+  /* background-image: linear-gradient(to top left, #2b3d60, #1b273e); */
+  background-color: #1b273e;
   color: white;
   min-width: 300px !important;
+  border-bottom: 2px white solid;
 }
 
 .avatar {
@@ -74,7 +76,6 @@
 
 .single-project {
   max-width: 800px;
-  background-color: #2b3d60;
 }
 
 .single-project-img {
@@ -93,8 +94,8 @@
 }
 
 .footer {
-  background-image: linear-gradient(to top left, #2b3d60, #1b273e);
   min-height: 50px;
+  border-top: 2px solid white;
 }
 
 .footer-icon {

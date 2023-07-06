@@ -1,7 +1,7 @@
 export const Footer = ({ about }) => {
   return (
     <div className="footer d-flex flex-column justify-content-center py-2">
-      <p className="fs-6 footer-content">Jason Chan &copy; </p>
+      <p className="fs-6 footer-content">Jason Chan &copy; 2023</p>
 
       <p className="d-flex justify-content-center footer-content">
         <a href={about.linkedin} target="_blank" rel="noreferrer">
