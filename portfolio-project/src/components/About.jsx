@@ -58,13 +58,17 @@ export const About = ({ about, isLoading }) => {
                 )
               }
             >
-              <h2 className="vertical-timeline-element-title d-flex fw-bolder">
+              <h2 className="vertical-timeline-element-title d-flex fw-bold">
                 {element.title}
               </h2>
               <h5 className="vertical-timeline-element-subtitle d-flex fs-6 fw-bold">
                 {element.location}
               </h5>
-              <p id="description" className="d-flex text fw-lighter">
+              <p
+                id="description"
+                className="d-flex text fw-lighter"
+                style={{ whiteSpace: "pre-line" }}
+              >
                 {element.description}
               </p>
             </VerticalTimelineElement>
