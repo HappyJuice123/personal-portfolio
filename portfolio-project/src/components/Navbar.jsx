@@ -62,7 +62,7 @@ const Navbar = ({ about, isLoading }) => {
               <p className="navbar-brand fs-1 text-white p-0 m-0">Jason Chan</p>
             </div>
           </Link>
-          <div className="d-flex flex-row justify-content-end">
+          <div className="d-flex flex-row justify-content-end rounded bg-white pt-0 mt-0">
             <button
               className="navbar-toggler border-0 w-100"
               type="button"
@@ -149,7 +149,7 @@ const Navbar = ({ about, isLoading }) => {
                     src={require("../icons/linkedin.png")}
                     title="Linkedin - Opens in new tab"
                     alt="linkedin icon"
-                    className="m-md-0 p-md-0 me-md-3 icon pt-2 mt-1"
+                    className="m-md-0 p-md-0 me-md-3 pt-2 mb-2 mt-1 pb-md-2 mt-md-1 ms-md-2"
                   />
                 </a>
               </li>
@@ -159,7 +159,7 @@ const Navbar = ({ about, isLoading }) => {
                     src={require("../icons/github.png")}
                     title="Github - Opens in new tab"
                     alt="github icon"
-                    className="m-md-0 p-md-0 icon pt-2 mt-1"
+                    className="m-md-0 p-md-0 me-md-3 pt-2 mb-2 mt-1 pb-md-2 mt-md-1"
                   />
                 </a>
               </li>

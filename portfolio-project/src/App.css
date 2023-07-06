@@ -46,11 +46,15 @@
 }
 
 .navbar-bg {
-  /* background-image: linear-gradient(to top left, #2b3d60, #1b273e); */
   background-color: #1b273e;
   color: white;
   min-width: 300px !important;
   border-bottom: 2px white solid;
+}
+
+@media only screen and (max-width: 768px) {
+  .hamburger-menu {
+  }
 }
 
 .icon {
