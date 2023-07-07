@@ -16,7 +16,6 @@ export const SingleProject = ({ techStackObj, isTechStackLoading }) => {
         setIsLoading(false);
         setProject(data);
         setProjectExists(true);
-        console.log("this is inside then block");
       })
       .catch((err) => {
         setIsLoading(true);
@@ -24,8 +23,6 @@ export const SingleProject = ({ techStackObj, isTechStackLoading }) => {
         setProjectExists(false);
       });
   }, [id]);
-
-  console.log(projectExists);
 
   return !projectExists ? (
     <p className="pt-5">Error 404 - This project does not exist.</p>
