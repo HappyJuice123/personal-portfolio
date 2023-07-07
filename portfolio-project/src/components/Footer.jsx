@@ -25,10 +25,20 @@ export const Footer = ({ about }) => {
       <p className="footer-content pt-2">
         <a
           href="https://www.flaticon.com/authors/freepik"
-          title="linkedin icons"
+          title="Link to Icons"
           className="text-white text-decoration-none footer-credit"
         >
           Icons created by Freepik - Flaticon
+        </a>
+      </p>
+      <p>
+        <a
+          href="https://www.bitmoji.com/"
+          title="Link to Bitmoji"
+          className="text-white text-decoration-none footer-credit"
+        >
+          Bitmojis used on this website are created by Bitmoji, a product of
+          Snap Inc.
         </a>
       </p>
     </div>
