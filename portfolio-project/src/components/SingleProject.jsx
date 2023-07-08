@@ -43,7 +43,7 @@ export const SingleProject = ({ techStackObj, isTechStackLoading }) => {
             className="img-fluid rounded-4 border single-project-img"
           />
         </p>
-        <p className="project-description py-3 px-5">{project.description}</p>
+        <p className="project-description py-3">{project.description}</p>
         <section className="d-flex justify-content-center pb-3">
           <div className="ps-4 pe-4 tech-icon-section">
             {project.techStack.map((tech) => {

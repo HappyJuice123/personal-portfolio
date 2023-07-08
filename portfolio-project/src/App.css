@@ -43,6 +43,7 @@
 
 .main {
   flex-grow: 1 !important;
+  min-width: 300px !important;
 }
 
 .navbar-bg {
@@ -99,6 +100,7 @@
 .footer {
   min-height: 50px;
   border-top: 2px solid white;
+  min-width: 300px !important;
 }
 
 .footer-icon {

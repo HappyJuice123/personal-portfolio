@@ -66,7 +66,7 @@ export const About = ({ about, isLoading }) => {
               </h5>
               <p
                 id="description"
-                className="d-flex text fw-lighter"
+                className="d-flex text-start fw-lighter"
                 style={{ whiteSpace: "pre-line" }}
               >
                 {element.description}
